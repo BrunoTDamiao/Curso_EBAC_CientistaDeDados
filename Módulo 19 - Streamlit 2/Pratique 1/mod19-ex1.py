@@ -4,10 +4,10 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 import seaborn as sns
-from PIL import Image
 import requests
 from io import BytesIO
-
+from PIL import Image
+from typing import List
 
 sns.set_theme(style='ticks',
               rc={'axes.spines.right': False,
@@ -22,7 +22,7 @@ def load_data(file_data: str, sep: str) -> pd.DataFrame:
 
 def multiselect_filter(data: pd.DataFrame,
                        col: str,
-                       selected: list[str]
+                       selected: List[str]
                        ) -> pd.DataFrame:
     if 'all' in selected:
         return data
